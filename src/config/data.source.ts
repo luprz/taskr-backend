@@ -1,6 +1,6 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { DataSource, DataSourceOptions } from "typeorm";
-import { SnakeNamingStrategy } from "typeorm-naming-strategies";
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 ConfigModule.forRoot({
   envFilePath: `.${process.env.NODE_ENV}.env`,
