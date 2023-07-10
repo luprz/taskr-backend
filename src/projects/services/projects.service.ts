@@ -34,14 +34,14 @@ export class ProjectsService {
 
   public async findProjectById(id: string): Promise<ProjectEntity> {
     try {
-      const user : ProjectEntity = await this.projectRepository
+      const project : ProjectEntity = await this.projectRepository
         .createQueryBuilder('project')
         .where({ id })
         .getOne();
-      if (!user) {
+      if (!project) {
         throw new ErrorManager({ type: 'NOT_FOUND', message: 'User not found' });
       }
-      return user;
+      return project;
     } catch (error) {
       throw ErrorManager.createSignatureError(error.message);
     }

@@ -1,8 +1,8 @@
+import { UserProjectEntity } from '../../projects/entities/userProject.entity';
 import { BaseEntity } from '../../config/base.entity';
 import { ROLES } from '../../constants/roles';
 import { IUser } from '../../interfaces/user.interface';
 import { Column, Entity, OneToMany } from 'typeorm';
-import { UserProjectEntity } from './userProject.entity';
 
 @Entity('users')
 export class UserEntity extends BaseEntity implements IUser {

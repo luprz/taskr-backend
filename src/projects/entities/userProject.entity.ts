@@ -1,18 +1,17 @@
-
 import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../config/base.entity';
 import { ACCESS_LEVELS } from '../../constants/roles';
-import { UserEntity } from './user.entity';
-import { ProjectEntity } from '../../projects/entities/project.entity';
+import { ProjectEntity } from './project.entity';
+import { UserEntity } from '../../users/entities/user.entity';
 
-@Entity('user_projects')
+@Entity({ name: 'users_projects' })
 export class UserProjectEntity extends BaseEntity {
   @Column({ type: 'enum', enum: ACCESS_LEVELS })
   accessLevel: ACCESS_LEVELS;
 
-  @ManyToOne(() => UserEntity, (user) => user.projectsIncludes)
+  @ManyToOne(()=> UserEntity, (user)=> user.projectsIncludes)
   user: UserEntity;
 
-  @ManyToOne(() => ProjectEntity, (project) => project.usersIncludes)
+  @ManyToOne(() => ProjectEntity, (project)=> project.usersIncludes)
   project: ProjectEntity;
 }

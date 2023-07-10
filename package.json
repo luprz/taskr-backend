@@ -21,8 +21,10 @@
     "orm:init": "typeorm-ts-node-esm -d ./src/config/data.source.ts",
     "m:gen:dev": "export NODE_ENV=development && npm run orm:init migration:generate",
     "m:run:dev": "export NODE_ENV=development && npm run orm:init migration:run",
+    "m:revert:dev": "export NODE_ENV=development && npm run orm:init migration:revert",
     "m:gen": "export NODE_ENV=production && npm run orm:init migration:generate",
-    "m:run": "export NODE_ENV=production && npm run orm:init migration:run"
+    "m:run": "export NODE_ENV=production && npm run orm:init migration:run",
+    "m:revert": "export NODE_ENV=production && npm run orm:init migration:revert"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

@@ -17,7 +17,7 @@ export const DataSourceConfig: DataSourceOptions = {
   database: configService.get('DATABASE_NAME'),
   entities: [__dirname + '/../**/**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/../migrations/*{.ts,.js}'],
-  synchronize: false,
+  synchronize: true,
   migrationsRun: true,
   logging: false,
   namingStrategy: new SnakeNamingStrategy(),
